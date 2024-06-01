@@ -5,6 +5,7 @@ AllCops:
     - 'db/*'
     - 'config/*'
     - 'lib/*'
+    - 'spec/*_helper.rb'
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
