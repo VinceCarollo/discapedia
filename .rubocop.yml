@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'db/*'
+    - 'config/*'
+    - 'lib/*'
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
