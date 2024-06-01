@@ -3,6 +3,7 @@ AllCops:
     - 'Gemfile'
     - 'Rakefile'
     - 'db/*'
+    - 'db/migrate/*'
     - 'config/*'
     - 'lib/*'
     - 'spec/*_helper.rb'
@@ -10,3 +11,5 @@ Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Metrics/BlockLength:
+  AllowedMethods: ['describe', 'context']

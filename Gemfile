@@ -48,6 +48,10 @@ group :development, :test do
   gem "pry"
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 6.0'
+end
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -60,5 +64,8 @@ group :development do
 
   gem "pre-commit", require: false
   gem "rubocop", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
+  gem "rubocop-rspec_rails", require: false
 end
 
