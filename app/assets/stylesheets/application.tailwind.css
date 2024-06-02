@@ -6,3 +6,9 @@
     font-family: "Fly";
     src: local("Fly"), url("fly.otf") format("opentype")
 }
+
+@layer base {
+    html {
+        font-family: "Roboto Light", system-ui, sans-serif;
+    }
+}
