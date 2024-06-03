@@ -5,4 +5,8 @@ class DiscComponent < ViewComponent::Base
     @manufacturer = manufacturer
     @discs = discs
   end
+
+  def disc_url(disc)
+    manufacturer_disc_path(@manufacturer.slug, disc.slug)
+  end
 end

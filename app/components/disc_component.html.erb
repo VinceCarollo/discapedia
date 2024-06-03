@@ -1,14 +1,16 @@
 <div class="w-100 text-2xl font-semibold bg-air-force-blue my-2 p-2 rounded"><%= @manufacturer.name %></div>
 <% @discs.each do |disc| %>
-  <div class="flex justify-between border-b border-t border-gray-600 p-1">
-    <div class="pl-3">
-      <h3><%= disc.name %></h3>
+  <%= link_to disc_url(disc), data: { turbo: true, turbo_frame: :search_results } do %>
+    <div class="flex justify-between border-b border-t border-gray-600 p-1">
+      <div class="pl-3">
+        <h3><%= disc.name %></h3>
+      </div>
+      <div class="flex justify-between w-3/12 pl-2">
+        <div><%= number_to_human(disc.speed) %></div>|
+        <div><%=  number_to_human(disc.glide) %></div>|
+        <div><%=  number_to_human(disc.turn) %></div>|
+        <div><%=  number_to_human(disc.fade) %></div>|
+      </div>
     </div>
-    <div class="flex justify-between w-3/12 pl-2">
-      <div><%= number_to_human(disc.speed) %></div>|
-      <div><%=  number_to_human(disc.glide) %></div>|
-      <div><%=  number_to_human(disc.turn) %></div>|
-      <div><%=  number_to_human(disc.fade) %></div>|
-    </div>
-  </div>
+  <% end %>
 <% end %>

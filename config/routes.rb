@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#index'
 
+  resources :manufacturers, only: [], param: :slug do
+    resources :discs, only: [:show], param: :slug
+  end
+
   root "home#index"
 end
