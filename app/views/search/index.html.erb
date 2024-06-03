@@ -1,5 +1,14 @@
-<div class="bg-gray-700 text-columbia-blue px-3 py-2 border-l border-r border-gray-600">
-  <% @search_results.each do |result| %>
-    <div class="border-t border-b border-columbia-blue"><%= result.name %></div>
+<div class="bg-gray-700 text-columbia-blue px-3 py-2 border-l border-r border-gray-600 rounded">
+  <% @search_results.each do |manufacturer, discs| %>
+    <div class="w-100 text-2xl font-semibold bg-air-force-blue my-2 p-2 rounded"><%= manufacturer.name %></div>
+    <% discs.each do |disc| %>
+      <div class="flex items-center justify-between py-2 border-b border-t border-gray-600">
+        <div class="flex items-center">
+          <div class="pl-3">
+            <h3><%= disc.name %></h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
