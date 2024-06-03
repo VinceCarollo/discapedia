@@ -2,8 +2,7 @@ AllCops:
   Exclude:
     - 'Gemfile'
     - 'Rakefile'
-    - 'db/*'
-    - 'db/migrate/*'
+    - 'db/**/*'
     - 'config/*'
     - 'lib/*'
     - 'spec/*_helper.rb'
