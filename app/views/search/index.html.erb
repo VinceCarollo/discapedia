@@ -2,11 +2,15 @@
   <% @search_results.each do |manufacturer, discs| %>
     <div class="w-100 text-2xl font-semibold bg-air-force-blue my-2 p-2 rounded"><%= manufacturer.name %></div>
     <% discs.each do |disc| %>
-      <div class="flex items-center justify-between py-2 border-b border-t border-gray-600">
-        <div class="flex items-center">
-          <div class="pl-3">
-            <h3><%= disc.name %></h3>
-          </div>
+      <div class="flex justify-between border-b border-t border-gray-600">
+        <div class="pl-3">
+          <h3><%= disc.name %></h3>
+        </div>
+        <div class="muted flex justify-between w-2/12 pl-2">
+          <div><%= number_to_human(disc.speed) %></div>|
+          <div><%=  number_to_human(disc.glide) %></div>|
+          <div><%=  number_to_human(disc.turn) %></div>|
+          <div><%=  number_to_human(disc.fade) %></div>|
         </div>
       </div>
     <% end %>
