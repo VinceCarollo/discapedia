@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.3.0"
 
+gem "view_component"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
@@ -51,6 +53,7 @@ end
 
 group :test do
   gem 'shoulda-matchers', '~> 6.0'
+  gem 'capybara'
 end
 
 group :development do
