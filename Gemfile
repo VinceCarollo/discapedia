@@ -71,8 +71,8 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-rspec_rails", require: false
-  gem "image_processing", ">= 1.2"
-  gem "aws-sdk-s3", require: false
-  gem 'active_storage_db'
 end
+
+gem "image_processing", ">= 1.2"
+gem 'active_storage_db'
 
