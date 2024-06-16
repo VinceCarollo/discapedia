@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :discs, only: [:show], param: :slug
   end
 
+  namespace :admin do
+    resources :discs
+  end
+
   root "home#index"
 end

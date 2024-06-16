@@ -1,0 +1,12 @@
+teebird:
+  manufacturer: manufacturers(:innova)
+  name: Teebird
+  slug: teebird
+  speed: 7
+  glide: 5
+  turn: 0
+  fade: 2
+  diameter: 21.2
+  height: 1.7
+  rim_depth: 1.2
+  rim_width: 1.8

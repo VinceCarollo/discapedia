@@ -3,7 +3,7 @@ AllCops:
     - 'Gemfile'
     - 'Rakefile'
     - 'db/**/*'
-    - 'config/*'
+    - 'config/**/*'
     - 'lib/*'
     - 'spec/*_helper.rb'
 Style/Documentation:

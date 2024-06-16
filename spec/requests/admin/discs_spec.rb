@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Discs', type: :request do
+RSpec.describe 'Admin::Discs', type: :request do
   let(:manufacturer) { Manufacturer.create!(name: 'Innova', slug: 'innova') }
   let(:disc) do
     Disc.create!(
@@ -18,9 +18,16 @@ RSpec.describe 'Discs', type: :request do
     )
   end
 
-  describe 'GET /discs/:manufacturer_slug/:slug' do
+  describe 'GET /admin/discs' do
     it 'renders a successful response' do
-      get manufacturer_disc_path(manufacturer.slug, disc.slug)
+      get admin_discs_url
+      expect(response).to be_successful
+    end
+  end
+
+  describe 'GET /admin/discs/:id/edit' do
+    it 'renders a successful response' do
+      get edit_admin_disc_url(disc)
       expect(response).to be_successful
     end
   end

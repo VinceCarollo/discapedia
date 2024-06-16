@@ -1,0 +1,23 @@
+<table class="table-auto">
+  <% @discs.each do |disc| %>
+    <tr>
+      <td><%= disc.id %></td>
+      <td><%= disc.name %></td>
+      <td><%= disc.slug %></td>
+      <td><%= disc.speed %></td>
+      <td><%= disc.glide %></td>
+      <td><%= disc.turn %></td>
+      <td><%= disc.fade %></td>
+      <td><%= disc.diameter %></td>
+      <td><%= disc.height %></td>
+      <td><%= disc.rim_depth %></td>
+      <td><%= disc.rim_width %></td>
+      <td><%= disc.created_at %></td>
+      <td><%= disc.updated_at %></td>
+
+      <td><%= link_to 'Show', admin_disc_path(disc) %></td>
+      <td><%= link_to 'Edit', edit_admin_disc_path(disc) %></td>
+      <td><%= link_to 'Destroy', admin_disc_path(disc), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
