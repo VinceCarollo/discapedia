@@ -16,4 +16,8 @@ class Disc < ApplicationRecord
                         :height,
                         :rim_depth,
                         :rim_width
+
+  def image_file_name
+    image.blob.filename.to_s if image.attached?
+  end
 end

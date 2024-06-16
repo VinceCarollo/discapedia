@@ -1,64 +1,83 @@
 <h1 class="text-5xl mb-4 text-center"><%= @disc.manufacturer.name %></h1>
 <h3 class="text-2xl mb-4 text-center"><%= @disc.name %></h3>
 <%= form_with model: [:admin, @disc] do |f| %>
-  <div class="grid grid-cols-1">
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :name, "Name", class: 'mr-5' %>
-      </span>
-      <%= f.text_field :name, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :speed, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :speed, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :glide, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :glide, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :turn, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :turn, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :fade, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :fade, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :diameter, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :diameter, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :height, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :height, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :rim_depth, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :rim_depth, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
-    </div>
-    <div class="mt-3 w-fit mx-auto">
-      <span class="inline-block w-24">
-        <%= f.label :rim_width, class: 'mr-5' %>
-      </span>
-      <%= f.number_field :rim_width, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+  <div class="grid grid-cols-2 gap-9">
+    <div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :name, "Name", class: 'mr-5' %>
+        </span>
+        <%= f.text_field :name, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :slug, class: 'mr-5' %>
+        </span>
+        <%= f.text_field :slug, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :speed, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :speed, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :glide, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :glide, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :turn, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :turn, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :fade, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :fade, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :diameter, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :diameter, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :height, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :height, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :rim_depth, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :rim_depth, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
+      <div class="mt-3 w-fit mx-auto">
+        <span class="inline-block w-24">
+          <%= f.label :rim_width, class: 'mr-5' %>
+        </span>
+        <%= f.number_field :rim_width, step: :any, class: 'mt-1 text-black rounded border p-1 border-poly-green' %>
+      </div>
     </div>
     <div class="mt-8">
+      <%= image_tag(@disc.image, width: 300, class: 'mx-auto') if @disc.image.attached? %>
+      <% if @disc.image.attached? %>
+        <span class="block text-center mb-5"><%= @disc.image_file_name %></span>
+      <% else %>
+        <div class="h-60 align-middle mb-5 border border-columbia-blue flex flex-column justify-center">
+          <span class="block my-auto">No image uploaded</span>
+        </div>
+      <% end %>
       <%= f.label :image, class: 'mr-5 block text-center' %>
       <%= f.file_field :image, class: 'mt-1 text-white rounded border p-1 border-poly-green' %>
     </div>
+  </div>
+  <div class="mt-10 text-right">
+    <%= f.submit "Update", class: 'bg-poly-green text-white rounded p-2 hover:bg-sea-green cursor-pointer focus:border-air-force-blue' %>
   </div>
 <% end %>

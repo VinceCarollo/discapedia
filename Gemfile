@@ -73,5 +73,6 @@ group :development do
   gem "rubocop-rspec_rails", require: false
   gem "image_processing", ">= 1.2"
   gem "aws-sdk-s3", require: false
+  gem 'active_storage_db'
 end
 
