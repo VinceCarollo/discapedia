@@ -9,4 +9,8 @@
     <div class="absolute w-full" data-hide-target="content" data-autocomplete-target="results"></div>
   </div>
 </div>
-<%= turbo_frame_tag :search_results %>
+<% if @disc.present? %>
+  <%= turbo_frame_tag :search_results, src: manufacturer_disc_path(@disc.manufacturer.slug, @disc.slug) %>
+<% else %>
+  <%= turbo_frame_tag :search_results %>
+<% end %>
