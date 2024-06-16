@@ -1,23 +1,38 @@
 <table class="table-auto">
+  <tr class="text-left">
+    <th class="p-1">ID</th>
+    <th class="p-1">Name</th>
+    <th class="p-1">Slug</th>
+    <th class="p-1">Speed</th>
+    <th class="p-1">Glide</th>
+    <th class="p-1">Turn</th>
+    <th class="p-1">Fade</th>
+    <th class="p-1">Diameter</th>
+    <th class="p-1">Height</th>
+    <th class="p-1">Rim Depth</th>
+    <th class="p-1">Rim Width</th>
+  </tr>
   <% @discs.each do |disc| %>
-    <tr>
-      <td><%= disc.id %></td>
-      <td><%= disc.name %></td>
-      <td><%= disc.slug %></td>
-      <td><%= disc.speed %></td>
-      <td><%= disc.glide %></td>
-      <td><%= disc.turn %></td>
-      <td><%= disc.fade %></td>
-      <td><%= disc.diameter %></td>
-      <td><%= disc.height %></td>
-      <td><%= disc.rim_depth %></td>
-      <td><%= disc.rim_width %></td>
-      <td><%= disc.created_at %></td>
-      <td><%= disc.updated_at %></td>
+    <tr class="border">
+      <td class="p-1"><%= disc.id %></td>
+      <td class="p-1"><%= disc.name %></td>
+      <td class="p-1"><%= disc.slug %></td>
+      <td class="p-1 px-4"><%= disc.speed %></td>
+      <td class="p-1 px-4"><%= disc.glide %></td>
+      <td class="p-1 px-4"><%= disc.turn %></td>
+      <td class="p-1 px-4"><%= disc.fade %></td>
+      <td class="p-1 px-4"><%= disc.diameter %></td>
+      <td class="p-1 px-4"><%= disc.height %></td>
+      <td class="p-1 px-4"><%= disc.rim_depth %></td>
+      <td class="p-1 px-4"><%= disc.rim_width %></td>
 
-      <td><%= link_to 'Show', admin_disc_path(disc) %></td>
-      <td><%= link_to 'Edit', edit_admin_disc_path(disc) %></td>
-      <td><%= link_to 'Destroy', admin_disc_path(disc), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td colspan="3" class="p-1 mx-6">
+        <div class="grid grid-cols-3">
+          <%= link_to 'Show', admin_disc_path(disc), class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
+          <%= link_to 'Edit', edit_admin_disc_path(disc), class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
+          <%= link_to 'Destroy', admin_disc_path(disc), method: :delete, data: { confirm: 'Are you sure?' }, class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
+        </div>
+      </td>
     </tr>
   <% end %>
 </table>
