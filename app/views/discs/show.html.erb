@@ -16,7 +16,11 @@
         </div>
       </div>
       <div>
-        <img class="rounded" src="https://infinitediscs.com/Inf_Uploads/DiscProducts/Orc68b81.Webp" alt="disc golf disc">
+        <% if @disc.image.attached? %>
+          <%= image_tag @disc.image, class: "rounded", alt: "#{@disc.name} image" %>
+        <% else %>
+          <img class="rounded" src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" alt="disc golf disc">
+        <% end %>
       </div>
     </div>
   </div>
