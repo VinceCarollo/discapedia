@@ -17,7 +17,11 @@
         </div>
       </div>
       <div>
-        <% if @disc.image.attached? %>
+        <% if @disc.buy_url.present? && @disc.image.attached? %>
+          <%= link_to @disc.buy_url, target: :_blank do %>
+            <%= image_tag @disc.image, class: "rounded", alt: "#{@disc.name} image" %>
+          <% end %>
+        <% elsif @disc.image.attached? %>
           <%= image_tag @disc.image, class: "rounded", alt: "#{@disc.name} image" %>
         <% else %>
           <img class="rounded" src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" alt="disc golf disc">

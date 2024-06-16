@@ -19,7 +19,7 @@ module Admin
     def permitted
       params.require(:disc).permit(:name, :slug, :speed, :glide, :turn,
                                    :fade, :diameter, :height, :rim_depth,
-                                   :rim_width, :image)
+                                   :rim_width, :image, :buy_url)
     end
   end
 end
