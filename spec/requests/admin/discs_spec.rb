@@ -18,17 +18,40 @@ RSpec.describe 'Admin::Discs', type: :request do
     )
   end
 
-  describe 'GET /admin/discs' do
-    it 'renders a successful response' do
-      get admin_discs_url
-      expect(response).to be_successful
+  context 'authenticated as an admin' do
+    before do
+      allow_any_instance_of(Admin::BaseController)
+        .to receive(:authenticate_admin!).and_return(true)
+    end
+
+    describe 'GET /admin/discs' do
+      it 'renders a successful response' do
+        get admin_discs_url
+        expect(response).to be_successful
+      end
+    end
+
+    describe 'GET /admin/discs/:id/edit' do
+      it 'renders a successful response' do
+        get edit_admin_disc_url(disc)
+        expect(response).to be_successful
+      end
     end
   end
 
-  describe 'GET /admin/discs/:id/edit' do
-    it 'renders a successful response' do
-      get edit_admin_disc_url(disc)
-      expect(response).to be_successful
+  context 'not authenticated as an admin' do
+    describe 'GET /admin/discs' do
+      it 'redirects to the login page' do
+        get admin_discs_url
+        expect(response).to redirect_to(login_url)
+      end
+    end
+
+    describe 'GET /admin/discs/:id/edit' do
+      it 'redirects to the login page' do
+        get edit_admin_disc_url(disc)
+        expect(response).to redirect_to(login_url)
+      end
     end
   end
 end
