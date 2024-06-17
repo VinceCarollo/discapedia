@@ -1,6 +1,2 @@
 <%= render Discs::SearchComponent.new %>
-<% if @disc.present? %>
-  <%= turbo_frame_tag :search_results, src: manufacturer_disc_path(@disc.manufacturer.slug, @disc.slug) %>
-<% else %>
-  <%= turbo_frame_tag :search_results %>
-<% end %>
+<%= turbo_frame_tag :search_results %>
