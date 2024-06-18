@@ -1,8 +1,9 @@
 module Admin
   class DiscsController < Admin::BaseController
     def index
-      @discs = Disc.includes(:manufacturer)
-                   .order('manufacturers.name ASC, discs.name ASC')
+      @data = Disc.includes(:manufacturer)
+                  .order('manufacturers.name ASC, discs.name ASC')
+                  .group_by(&:manufacturer)
     end
 
     def update
