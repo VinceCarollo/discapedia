@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class DiscComponent < ViewComponent::Base
+class DiscPreviewComponent < ViewComponent::Base
   def initialize(manufacturer:, discs:)
     @manufacturer = manufacturer
     @discs = discs

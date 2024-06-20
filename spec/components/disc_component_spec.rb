@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe DiscComponent, type: :component do
+RSpec.describe DiscPreviewComponent, type: :component do
   let(:manufacturer) { Manufacturer.new(name: 'Innova', slug: 'innova') }
   let(:disc) { Disc.new(disc_attributes.merge(slug: 'destroyer')) }
   let(:disc_attributes) do
