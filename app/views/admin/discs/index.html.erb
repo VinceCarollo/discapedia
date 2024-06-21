@@ -14,8 +14,6 @@
   </tr>
   <% @data.each do |manufacturer, discs| %>
     <tr class="bg-columbia-blue text-black text-3xl"><th colspan='14' class="py-4 border border-white"><%= manufacturer.name %></th></tr>
-    <% discs.each do |disc| %>
-      <%= render Admin::DiscComponent.new(disc:) %>
-    <% end %>
+    <%= render Admin::DiscComponent.with_collection(discs) %>
   <% end %>
 </table>
