@@ -6,13 +6,13 @@ export default class extends Controller {
 
   hideContent() {
     this.contentTargets.forEach((content) => {
-      content.classList.add("collapse")
+      content.classList.add("hidden")
     });
   }
 
   showContent() {
     this.contentTargets.forEach((content) => {
-      content.classList.remove("collapse")
+      content.classList.remove("hidden")
     });
   }
 }
