@@ -1,3 +1,7 @@
-<% @search_results.each do |manufacturer, discs| %>
-  <%= render DiscPreviewComponent.new(manufacturer:, discs:) %>
+<% if @search_results.present? %>
+  <% @search_results.each do |manufacturer, discs| %>
+    <%= render DiscPreviewComponent.new(manufacturer:, discs:) %>
+  <% end %>
+<% else %>
+  <h1 class="text-xl font-bold">No results found</h1>
 <% end %>
