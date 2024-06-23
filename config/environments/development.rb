@@ -66,4 +66,8 @@ Rails.application.configure do
   config.active_storage.service = :db
 
   config.assets.debug = true
+
+  config.generators do |g|
+    g.factory_bot suffix: "factory"
+  end
 end

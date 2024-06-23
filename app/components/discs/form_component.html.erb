@@ -1,0 +1,55 @@
+<h1 class="text-5xl mb-4 text-center"><%= @disc.manufacturer.name %></h1>
+<h3 class="text-2xl mb-4 text-center"><%= @disc.name %></h3>
+<%= form_with model: [:admin, @disc] do |f| %>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-9">
+    <div class="flex flex-col gap-1">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, class: 'text-black rounded border p-1 border-poly-green' %>
+      <%= f.label :slug %>
+      <%= f.text_field :slug, class: 'text-black rounded border p-1 border-poly-green' %>
+      <%= f.label :buy_url %>
+      <%= f.text_field :buy_url, class: 'text-black rounded border p-1 border-poly-green' %>
+      <%= f.label :flight_chart_url %>
+      <%= f.text_field :flight_chart_url, class: 'text-black rounded border p-1 border-poly-green' %>
+      <%= f.label :speed %>
+      <%= f.number_field :speed, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :glide %>
+      <%= f.number_field :glide, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :turn %>
+      <%= f.number_field :turn, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :fade %>
+      <%= f.number_field :fade, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :diameter %>
+      <%= f.number_field :diameter, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :height %>
+      <%= f.number_field :height, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :rim_depth %>
+      <%= f.number_field :rim_depth, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+      <%= f.label :rim_width %>
+      <%= f.number_field :rim_width, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
+    </div>
+    <div class="mt-3 flex flex-col gap-0.5">
+      <%= f.label :category %>
+      <%= f.select :category, options_for_select(Disc.categories), { include_blank: false }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full'  %>
+      <%= f.label :stability %>
+      <%= f.select :stability, options_for_select(Disc.stabilities), { include_blank: false }, class: 'mt-1 mb-12 text-black rounded border p-1 border-poly-green w-full'  %>
+      <%= image_tag(@disc.image, width: 300, class: 'mx-auto') if @disc.image.attached? %>
+      <% if @disc.image.attached? %>
+        <span class="block text-center mb-5"><%= @disc.image_file_name %></span>
+      <% else %>
+        <div class="h-60 align-middle mb-5 border border-columbia-blue flex flex-column justify-center">
+          <span class="block my-auto">No image uploaded</span>
+        </div>
+      <% end %>
+
+      <div class="text-center">
+        <%= f.label :image, class: 'block text-center' %>
+        <%= f.file_field :image, class: 'mt-1 text-white rounded border p-1 border-poly-green' %>
+      </div>
+
+      <div class="mt-12 text-center">
+        <%= f.submit "Update", class: 'bg-poly-green text-white text-2xl rounded p-2 hover:bg-sea-green cursor-pointer focus:border-air-force-blue' %>
+      </div>
+    </div>
+  </div>
+<% end %>
