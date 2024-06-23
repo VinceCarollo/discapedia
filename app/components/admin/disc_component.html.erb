@@ -6,13 +6,10 @@
   <td class="p-1 px-4"><%= @disc.glide %></td>
   <td class="p-1 px-4"><%= @disc.turn %></td>
   <td class="p-1 px-4"><%= @disc.fade %></td>
-  <td class="p-1 px-4"><%= @disc.diameter %></td>
-  <td class="p-1 px-4"><%= @disc.height %></td>
-  <td class="p-1 px-4"><%= @disc.rim_depth %></td>
-  <td class="p-1 px-4"><%= @disc.rim_width %></td>
-
+  <td class="p-1 px-4"><%= @disc.stability %></td>
+  <td class="p-1 px-4"><%= @disc.category %></td>
   <td colspan="3" class="p-1 mx-6">
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-2 gap-4">
       <%= link_to 'Edit', edit_admin_disc_path(@disc), class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
       <%= button_to 'Delete', admin_disc_path(@disc), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
     </div>
