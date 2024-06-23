@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :discs
+    resources :discs, only: [:index, :edit, :destroy, :update]
   end
 
   root "home#index"

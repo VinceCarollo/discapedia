@@ -15,6 +15,12 @@ module Admin
       end
     end
 
+    def destroy
+      Disc.find(params[:id]).destroy!
+
+      redirect_to admin_discs_path
+    end
+
     def edit
       @disc = Disc.find(params[:id])
     end

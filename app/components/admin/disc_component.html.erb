@@ -15,7 +15,7 @@
     <div class="grid grid-cols-3">
       <%= link_to 'Show', admin_disc_path(@disc), class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
       <%= link_to 'Edit', edit_admin_disc_path(@disc), class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
-      <%= link_to 'Destroy', admin_disc_path(@disc), method: :delete, data: { confirm: 'Are you sure?' }, class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
+      <%= button_to 'Delete', admin_disc_path(@disc), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } }, class: 'hover:bg-poly-green p-1/2 text-sm text-center' %>
     </div>
   </td>
 </tr>
