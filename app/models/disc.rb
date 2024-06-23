@@ -18,11 +18,7 @@ class Disc < ApplicationRecord
   validates_presence_of :speed,
                         :glide,
                         :turn,
-                        :fade,
-                        :diameter,
-                        :height,
-                        :rim_depth,
-                        :rim_width
+                        :fade
 
   enum category: %i[distance_driver control_driver hybrid_driver fairway_driver midrange approach putter]
   enum stability: %i[very_overstable overstable stable understable very_understable]

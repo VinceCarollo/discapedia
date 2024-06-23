@@ -24,8 +24,4 @@ RSpec.describe Disc, type: :model do
   it { should validate_presence_of(:glide) }
   it { should validate_presence_of(:turn) }
   it { should validate_presence_of(:fade) }
-  it { should validate_presence_of(:diameter) }
-  it { should validate_presence_of(:height) }
-  it { should validate_presence_of(:rim_depth) }
-  it { should validate_presence_of(:rim_width) }
 end
