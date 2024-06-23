@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_23_041624) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_23_043043) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +68,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_23_041624) do
     t.integer "stability"
     t.string "flight_chart_url"
     t.index ["manufacturer_id"], name: "index_discs_on_manufacturer_id"
+    t.index ["slug", "manufacturer_id"], name: "index_discs_on_slug_and_manufacturer_id", unique: true
   end
 
   create_table "manufacturers", force: :cascade do |t|
@@ -75,6 +76,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_23_041624) do
     t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_manufacturers_on_name", unique: true
+    t.index ["slug"], name: "index_manufacturers_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|
