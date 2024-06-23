@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_17_215656) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_22_220216) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,6 +64,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_17_215656) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "buy_url"
+    t.integer "category"
+    t.integer "stability"
+    t.string "flight_chart_url"
     t.index ["manufacturer_id"], name: "index_discs_on_manufacturer_id"
   end
 
