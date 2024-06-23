@@ -1,22 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Admin::Discs', type: :request do
-  let(:manufacturer) { Manufacturer.create!(name: 'Innova', slug: 'innova') }
-  let(:disc) do
-    Disc.create!(
-      manufacturer:,
-      name: 'Destroyer',
-      slug: 'destroyer',
-      speed: 12,
-      glide: 5,
-      turn: -1,
-      fade: 3,
-      diameter: 21.1,
-      height: 1.4,
-      rim_depth: 1.2,
-      rim_width: 2.2
-    )
-  end
+  let(:disc) { create(:disc) }
 
   context 'authenticated as an admin' do
     before do

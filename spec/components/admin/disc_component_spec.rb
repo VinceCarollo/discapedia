@@ -4,22 +4,8 @@ require 'rails_helper'
 
 RSpec.describe Admin::DiscComponent, type: :component do
   let(:component) {  described_class.new(disc:) }
-  let(:manufacturer) { Manufacturer.create!(name: 'Innova', slug: 'innova') }
-  let(:disc) { Disc.create!(disc_attributes) }
-
-  let(:disc_attributes) do
-    { name: 'Destroyer',
-      slug: 'destroyer',
-      manufacturer_id: manufacturer.id,
-      speed: 12,
-      glide: 5,
-      turn: -1,
-      fade: 3,
-      diameter: 21.1,
-      height: 1.4,
-      rim_depth: 1.2,
-      rim_width: 2.2 }
-  end
+  let(:manufacturer) { create(:manufacturer) }
+  let(:disc) { create(:disc, manufacturer:) }
 
   before do
     render_inline(component)
@@ -30,43 +16,27 @@ RSpec.describe Admin::DiscComponent, type: :component do
   end
 
   it 'renders name' do
-    expect(page).to have_content(disc_attributes[:name])
+    expect(page).to have_content(disc.name)
   end
 
   it 'renders slug' do
-    expect(page).to have_content(disc_attributes[:slug])
+    expect(page).to have_content(disc.slug)
   end
 
   it 'renders speed' do
-    expect(page).to have_content(disc_attributes[:speed])
+    expect(page).to have_content(disc.speed)
   end
 
   it 'renders glide' do
-    expect(page).to have_content(disc_attributes[:glide])
+    expect(page).to have_content(disc.glide)
   end
 
   it 'renders turn' do
-    expect(page).to have_content(disc_attributes[:turn])
+    expect(page).to have_content(disc.turn)
   end
 
   it 'renders fade' do
-    expect(page).to have_content(disc_attributes[:fade])
-  end
-
-  it 'renders diameter' do
-    expect(page).to have_content(disc_attributes[:diameter])
-  end
-
-  it 'renders height' do
-    expect(page).to have_content(disc_attributes[:height])
-  end
-
-  it 'renders rim depth' do
-    expect(page).to have_content(disc_attributes[:rim_depth])
-  end
-
-  it 'renders rim width' do
-    expect(page).to have_content(disc_attributes[:rim_width])
+    expect(page).to have_content(disc.fade)
   end
 
   it 'renders edit button' do

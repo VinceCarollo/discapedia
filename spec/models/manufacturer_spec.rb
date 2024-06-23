@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Manufacturer, type: :model do
-  before do
-    Manufacturer.create!(name: 'Innova', slug: 'innova')
-  end
+  let!(:manufacturer) { create(:manufacturer) }
 
   it { should have_many(:discs) }
   it { should validate_presence_of(:name) }
