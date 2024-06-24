@@ -1,21 +1,21 @@
 <turbo-frame id="search_results">
-  <div class="block p-4 bg-columbia-blue border border-2 border-poly-green rounded">
+  <div class="block min-w-72 p-4 bg-columbia-blue border border-2 border-poly-green rounded">
     <div class="grid grid-cols-1 md:grid-cols-3">
       <div class="col-span-2">
         <h1 class="text-3xl font-bold"><%= @disc.manufacturer.name %></h1>
         <h5><%= @disc.name %></h5>
         <div class="grid grid-cols-4 mt-8 text-center">
-          <span class="text-4xl"><%= speed %></span>
-          <span class="text-4xl"><%= glide %></span>
-          <span class="text-4xl"><%= turn %></span>
-          <span class="text-4xl"><%= fade %></span>
-          <span class="hidden md:inline-block">Speed</span>
-          <span class="hidden md:inline-block">Glide</span>
-          <span class="hidden md:inline-block">Turn</span>
-          <span class="hidden md:inline-block">Fade</span>
+          <span class="text-5xl"><%= speed %></span>
+          <span class="text-5xl"><%= glide %></span>
+          <span class="text-5xl"><%= turn %></span>
+          <span class="text-5xl"><%= fade %></span>
+          <span>Speed</span>
+          <span>Glide</span>
+          <span>Turn</span>
+          <span>Fade</span>
         </div>
         <div class="grid grid-cols 2 mt-5 md:mt-20">
-          <div class="flex flex-row gap-10 justify-center text-air-force-blue text-xl">
+          <div class="flex flex-row gap-10 justify-center text-air-force-blue text-xl font-bold">
             <span><%= @disc.stability&.titleize %></span>
             <span><%= @disc.category&.titleize %></span>
           </div>
