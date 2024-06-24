@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_23_043043) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_24_021435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,13 +57,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_23_043043) do
     t.float "glide", null: false
     t.float "turn", null: false
     t.float "fade", null: false
-    t.float "diameter"
-    t.float "height"
-    t.float "rim_depth"
-    t.float "rim_width"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "buy_url"
     t.integer "category"
     t.integer "stability"
     t.string "flight_chart_url"

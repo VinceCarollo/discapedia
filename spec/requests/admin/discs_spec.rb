@@ -31,11 +31,7 @@ RSpec.describe 'Admin::Discs', type: :request do
           speed: 7,
           glide: 4,
           turn: -0,
-          fade: 2,
-          diameter: 21.3,
-          height: 1.3,
-          rim_depth: 1.3,
-          rim_width: 2.3
+          fade: 2
         }
       end
 
@@ -71,26 +67,6 @@ RSpec.describe 'Admin::Discs', type: :request do
       it 'updates disc fade' do
         disc.reload
         expect(disc.fade).to eq(new_attributes[:fade])
-      end
-
-      it 'updates disc diameter' do
-        disc.reload
-        expect(disc.diameter).to eq(new_attributes[:diameter])
-      end
-
-      it 'updates disc height' do
-        disc.reload
-        expect(disc.height).to eq(new_attributes[:height])
-      end
-
-      it 'updates disc rim depth' do
-        disc.reload
-        expect(disc.rim_depth).to eq(new_attributes[:rim_depth])
-      end
-
-      it 'updates disc rim width' do
-        disc.reload
-        expect(disc.rim_width).to eq(new_attributes[:rim_width])
       end
 
       it 'redirects to the disc' do

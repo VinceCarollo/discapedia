@@ -10,7 +10,7 @@ class Disc < ApplicationRecord
 
   belongs_to :manufacturer
 
-  validates :buy_url,
+  validates :flight_chart_url,
             format: URI::DEFAULT_PARSER.make_regexp(%w[http https]),
             allow_blank: true
   validates :name, presence: true, uniqueness: { scope: :manufacturer_id }

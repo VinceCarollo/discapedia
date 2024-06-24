@@ -46,22 +46,6 @@ RSpec.describe Discs::FormComponent, type: :component do
     expect(page).to have_selector("input[name='disc[fade]'][type='number']")
   end
 
-  it 'renders a number field for the disc diameter' do
-    expect(page).to have_selector("input[name='disc[diameter]'][type='number']")
-  end
-
-  it 'renders a number field for the disc height' do
-    expect(page).to have_selector("input[name='disc[height]'][type='number']")
-  end
-
-  it 'renders a number field for the disc rim_depth' do
-    expect(page).to have_selector("input[name='disc[rim_depth]'][type='number']")
-  end
-
-  it 'renders a number field for the disc rim_width' do
-    expect(page).to have_selector("input[name='disc[rim_width]'][type='number']")
-  end
-
   it 'renders a select field for the disc category' do
     expect(page).to have_selector("select[name='disc[category]']")
   end
