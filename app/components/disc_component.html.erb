@@ -1,6 +1,6 @@
 <turbo-frame id="search_results">
-  <div class="block p-6 bg-columbia-blue border border-2 border-poly-green rounded">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+  <div class="block p-4 bg-columbia-blue border border-2 border-poly-green rounded">
+    <div class="grid grid-cols-1 md:grid-cols-3">
       <div class="col-span-2">
         <h1 class="text-3xl font-bold"><%= @disc.manufacturer.name %></h1>
         <h5><%= @disc.name %></h5>
@@ -14,16 +14,16 @@
           <span class="hidden md:inline-block">Turn</span>
           <span class="hidden md:inline-block">Fade</span>
         </div>
+        <div class="grid grid-cols 2 mt-5 md:mt-20">
+          <div class="flex flex-row gap-10 justify-center text-air-force-blue text-xl">
+            <span><%= @disc.stability&.titleize %></span>
+            <span><%= @disc.category&.titleize %></span>
+          </div>
+        </div>
       </div>
-      <div>
-        <% if @disc.buy_url.present? && @disc.image.attached? %>
-          <%= link_to @disc.buy_url, target: :_blank do %>
-            <%= image_tag @disc.image, class: "rounded", alt: "#{@disc.name} image" %>
-          <% end %>
-        <% elsif @disc.image.attached? %>
-          <%= image_tag @disc.image, class: "rounded", alt: "#{@disc.name} image" %>
-        <% else %>
-          <img class="rounded" src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" alt="disc golf disc">
+      <div class="mt-5 md:mt-0 flex items-center">
+        <% if @disc.flight_chart_url.present? %>
+          <%= image_tag @disc.flight_chart_url, class: "rounded-lg mx-auto" %>
         <% end %>
       </div>
     </div>
