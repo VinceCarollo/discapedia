@@ -12,7 +12,11 @@
   </head>
 
   <body class="bg-poly-green">
-    <main class="text-white mt-28 p-4 bg-air-force-blue rounded w-5/6 mx-auto">
+    <%= link_to admin_discs_path do %>
+      <h1 class="text-5xl text-center text-white my-12 font-fly">Discapedia Admin</h1>
+    <% end %>
+
+    <main class="text-white p-4 bg-air-force-blue rounded w-5/6 mx-auto">
       <%= yield %>
     </main>
   </body>
