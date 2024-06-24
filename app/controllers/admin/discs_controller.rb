@@ -9,7 +9,7 @@ module Admin
     def update
       @disc = Disc.find(params[:id])
       if @disc.update(permitted)
-        redirect_to admin_disc_path(@disc)
+        redirect_to admin_discs_path
       else
         render :edit, status: :unprocessable_entity
       end
