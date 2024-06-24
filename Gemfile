@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.1.0'
   gem "pry"
   gem 'factory_bot_rails'
+  gem 'dotenv'
 end
 
 group :test do
