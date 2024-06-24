@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'tailwind', 'inter-font', "data-turbo-track": 'reload' %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', "data-turbo-track": 'reload' %>
     <%= favicon_link_tag 'fav.png' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class="bg-air-force-blue">
-    <%= render partial: "shared/navbar" %>
+    <%= render partial: 'shared/navbar' %>
 
     <main class="container w-11/12 lg:w-8/12 mx-auto mt-28">
       <%= yield %>
