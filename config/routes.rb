@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   end
 
   root "home#index"
+
+  if Rails.env.production?
+    get '*path', to: 'home#index'
+  end
 end
