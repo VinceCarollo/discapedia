@@ -4,6 +4,7 @@ class Disc < ApplicationRecord
   pg_search_scope :search_by_name,
                   associated_against: { manufacturer: :name },
                   against: :name,
+                  order_within_rank: 'discs.slug ASC',
                   using: { tsearch: { prefix: true } }
 
   has_one_attached :image
