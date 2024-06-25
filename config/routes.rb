@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :discs, only: [:index, :edit, :destroy, :update]
   end
 
+  get 'admin', to: 'admin/discs#index'
+
   root "home#index"
 
   if Rails.env.production?
