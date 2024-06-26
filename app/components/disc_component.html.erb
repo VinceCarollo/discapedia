@@ -4,15 +4,15 @@
       <div class="col-span-2">
         <h1 class="text-3xl font-bold"><%= @disc.manufacturer.name %></h1>
         <h5><%= @disc.name %></h5>
-        <div class="grid grid-cols-4 mt-8 text-center">
+        <div class="grid grid-cols-4 mt-6 md:mt-10 text-center">
           <span class="text-5xl"><%= speed %></span>
           <span class="text-5xl"><%= glide %></span>
           <span class="text-5xl"><%= turn %></span>
           <span class="text-5xl"><%= fade %></span>
-          <span>Speed</span>
-          <span>Glide</span>
-          <span>Turn</span>
-          <span>Fade</span>
+          <span class="text-air-force-blue font-bold">Speed</span>
+          <span class="text-air-force-blue font-bold">Glide</span>
+          <span class="text-air-force-blue font-bold">Turn</span>
+          <span class="text-air-force-blue font-bold">Fade</span>
         </div>
         <div class="grid grid-cols 2 mt-5 md:mt-20">
           <div class="flex flex-row gap-10 justify-center text-air-force-blue text-xl font-bold">
