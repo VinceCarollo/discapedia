@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe Admin::DiscComponent, type: :component do
+RSpec.describe Admin::Discs::RowComponent, type: :component do
   let(:component) {  described_class.new(disc:) }
   let(:manufacturer) { create(:manufacturer) }
   let(:disc) { create(:disc, manufacturer:) }

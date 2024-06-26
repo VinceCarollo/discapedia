@@ -12,6 +12,6 @@
   </tr>
   <% @data.each do |manufacturer, discs| %>
     <tr class="bg-columbia-blue text-black text-3xl"><th colspan='14' class="py-4 border border-white"><%= manufacturer.name %></th></tr>
-    <%= render Admin::DiscComponent.with_collection(discs) %>
+    <%= render Admin::Discs::RowComponent.with_collection(discs) %>
   <% end %>
 </table>
