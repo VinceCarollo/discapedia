@@ -1,27 +1,29 @@
 <turbo-frame id="search_results">
-  <div class="block min-w-72 p-4 bg-columbia-blue border border-2 border-poly-green rounded">
+  <div class="block min-w-72 p-4 bg-columbia-blue border border-2 border-poly-green rounded mt-4">
     <div class="grid grid-cols-1 md:grid-cols-3">
-      <div class="col-span-2">
-        <h1 class="text-3xl font-bold"><%= @disc.manufacturer.name %></h1>
-        <h5><%= @disc.name %></h5>
-        <div class="grid grid-cols-4 mt-6 md:mt-10 text-center">
-          <span class="text-5xl"><%= speed %></span>
-          <span class="text-5xl"><%= glide %></span>
-          <span class="text-5xl"><%= turn %></span>
-          <span class="text-5xl"><%= fade %></span>
-          <span class="text-air-force-blue font-bold">Speed</span>
-          <span class="text-air-force-blue font-bold">Glide</span>
-          <span class="text-air-force-blue font-bold">Turn</span>
-          <span class="text-air-force-blue font-bold">Fade</span>
+      <div class="col-span-2 flex flex-col justify-between">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-bold"><%= @disc.manufacturer.name %></h1>
+          <h5 class="text-xl md:text-2xl"><%= @disc.name %></h5>
         </div>
-        <div class="grid grid-cols 2 mt-5 md:mt-20">
-          <div class="flex flex-row gap-10 justify-center text-air-force-blue text-xl font-bold text-center">
+        <div class="grid grid-cols-4 text-center my-4 md:mt-0 md:mb-10">
+          <span class="text-5xl md:text-7xl"><%= speed %></span>
+          <span class="text-5xl md:text-7xl"><%= glide %></span>
+          <span class="text-5xl md:text-7xl"><%= turn %></span>
+          <span class="text-5xl md:text-7xl"><%= fade %></span>
+          <span class="text-air-force-blue md:font-bold">Speed</span>
+          <span class="text-air-force-blue md:font-bold">Glide</span>
+          <span class="text-air-force-blue md:font-bold">Turn</span>
+          <span class="text-air-force-blue md:font-bold">Fade</span>
+        </div>
+        <div class="grid grid-cols 2">
+          <div class="flex flex-row gap-7 md:gap-12 justify-center font-bold text-air-force-blue text-xl text-center mb-4 md:mb-0">
             <span><%= @disc.stability&.titleize %></span>
             <span><%= @disc.category&.titleize %></span>
           </div>
         </div>
       </div>
-      <div class="mt-5 md:mt-0 flex items-center">
+      <div class="flex items-center">
         <% if @disc.flight_chart_url.present? %>
           <%= image_tag @disc.flight_chart_url, class: 'rounded-lg mx-auto' %>
         <% end %>
