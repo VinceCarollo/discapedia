@@ -1,7 +1,9 @@
-<% if @search_results.present? %>
-  <% @search_results.each do |manufacturer, discs| %>
-    <%= render DiscPreviewComponent.new(manufacturer:, discs:) %>
+<%= turbo_frame_tag :dropdown_results do %>
+  <% if @search_results.present? %>
+    <% @search_results.each do |manufacturer, discs| %>
+      <%= render DiscPreviewComponent.new(manufacturer:, discs:) %>
+    <% end %>
+  <% else %>
+    <h1 class="text-xl font-bold">No results found</h1>
   <% end %>
-<% else %>
-  <h1 class="text-xl font-bold">No results found</h1>
 <% end %>
