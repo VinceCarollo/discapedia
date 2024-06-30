@@ -4,6 +4,7 @@
     <%= link_to disc_url(disc),
                 data: { turbo_action: 'advance',
                         action: 'click->reveal#hide',
+                        turbo_prefetch: 'false',
                         turbo: true, turbo_frame: :search_results } do %>
       <div class="md:text-xl flex justify-between border-b border-t border-gray-600 p-1 hover:bg-gray-600">
         <div class="pl-3">
