@@ -22,4 +22,8 @@ export default class extends Controller {
       this.resultsTarget.classList.remove('hidden')
     }
   }
+
+  blurInput(e) {
+    this.inputTarget.blur()
+  }
 }
