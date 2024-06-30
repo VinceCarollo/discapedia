@@ -1,5 +1,8 @@
 <%= turbo_frame_tag :dropdown_results do %>
   <% if @search_results.present? %>
+    <div data-action="click->disc-search#clearSearchInput" class="hover:cursor-pointer w-100 bg-red-800 flex justify-center rounded text-sm">
+      <span class="py-1/2">Clear</span>
+    </div>
     <% @search_results.each do |manufacturer, discs| %>
       <%= render DiscPreviewComponent.new(manufacturer:, discs:) %>
     <% end %>
