@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = [ "input", "results" ]
 
   hideResultsOnClear() {
-    if (this.inputTarget.value.length <= 1) {
+    if (this.inputTarget.value.length < 1) {
       this.resultsTarget.classList.add('hidden')
     }
   }
