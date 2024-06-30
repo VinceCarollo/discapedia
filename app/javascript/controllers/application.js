@@ -1,6 +1,6 @@
 import { Application } from "@hotwired/stimulus"
 
-import AutoSubmit from './auto_submit_controller'
+import AutoSubmit from '@stimulus-components/auto-submit'
 import RevealController from '@stimulus-components/reveal'
 
 const application = Application.start()
