@@ -10,13 +10,6 @@ export default class extends Controller {
     }
   }
 
-  clearSearchInput(e) {
-    e.stopPropagation()
-    this.inputTarget.value = ""
-    this.inputTarget.focus()
-    this.resultsTarget.classList.add('hidden')
-  }
-
   showResultsIfPresent() {
     if (this.inputTarget.value.length > 0) {
       this.resultsTarget.classList.remove('hidden')
