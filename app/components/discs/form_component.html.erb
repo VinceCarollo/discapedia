@@ -1,5 +1,7 @@
-<h1 class="text-5xl mb-4 text-center"><%= @disc.manufacturer.name %></h1>
-<h3 class="text-2xl mb-4 text-center"><%= @disc.name %></h3>
+<% if @disc.persisted? %>
+  <h1 class="text-5xl mb-4"><%= @disc.manufacturer.name %></h1>
+  <h3 class="text-2xl mb-10"><%= @disc.name %></h3>
+<% end %>
 
 <%= form_with model: [:admin, @disc] do |f| %>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -8,8 +10,10 @@
       <%= f.text_field :name, class: 'text-black rounded border p-1 border-poly-green' %>
       <%= f.label :slug %>
       <%= f.text_field :slug, class: 'text-black rounded border p-1 border-poly-green' %>
-      <%= f.label :buy_url %>
-      <%= f.text_field :buy_url, class: 'text-black rounded border p-1 border-poly-green' %>
+      <%= f.label :manufacturer %>
+      <%= f.select :manufacturer,
+                   options_from_collection_for_select(Manufacturer.all, :id, :name, @disc.manufacturer_id),
+                   { include_blank: true }, class: 'text-black rounded border p-2 border-poly-green' %>
       <%= f.label :speed %>
       <%= f.number_field :speed, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
       <%= f.label :glide %>
@@ -39,6 +43,6 @@
   </div>
 
   <div class="mt-12 text-center">
-    <%= f.submit 'Update', class: 'bg-poly-green text-white text-2xl rounded p-2 hover:bg-sea-green cursor-pointer focus:border-air-force-blue' %>
+    <%= f.submit submit_text, class: 'bg-poly-green text-white text-2xl rounded p-2 hover:bg-sea-green cursor-pointer focus:border-air-force-blue' %>
   </div>
 <% end %>

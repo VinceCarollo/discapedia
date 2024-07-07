@@ -6,6 +6,10 @@ module Admin
                   .group_by(&:manufacturer)
     end
 
+    def new
+      @disc = Disc.new
+    end
+
     def update
       @disc = Disc.find(params[:id])
       if @disc.update(permitted)

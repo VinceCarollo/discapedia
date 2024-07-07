@@ -5,5 +5,11 @@ module Discs
     def initialize(disc:)
       @disc = disc
     end
+
+    private
+
+    def submit_text
+      @disc.new_record? ? 'Create' : 'Update'
+    end
   end
 end

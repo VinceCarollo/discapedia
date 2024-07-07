@@ -1,17 +1,20 @@
-<table class="table-auto mx-auto">
-  <tr class="text-left">
-    <th class="p-1">ID</th>
-    <th class="p-1">Name</th>
-    <th class="p-1">Slug</th>
-    <th class="p-1">Speed</th>
-    <th class="p-1">Glide</th>
-    <th class="p-1">Turn</th>
-    <th class="p-1">Fade</th>
-    <th class="p-1">Stability</th>
-    <th class="p-1">Category</th>
-  </tr>
-  <% @data.each do |manufacturer, discs| %>
-    <tr class="bg-columbia-blue text-black text-3xl"><th colspan='14' class="py-4 border border-white"><%= manufacturer.name %></th></tr>
-    <%= render Admin::Discs::RowComponent.with_collection(discs) %>
-  <% end %>
-</table>
+<div class="flex flex-col">
+  <%= link_to 'Create', new_admin_disc_path, class: 'py-3 px-10 rounded bg-poly-green text-white font-bold text-center' %>
+  <table class="table-auto mt-10">
+    <tr class="text-left">
+      <th class="p-1">ID</th>
+      <th class="p-1">Name</th>
+      <th class="p-1">Slug</th>
+      <th class="p-1">Speed</th>
+      <th class="p-1">Glide</th>
+      <th class="p-1">Turn</th>
+      <th class="p-1">Fade</th>
+      <th class="p-1">Stability</th>
+      <th class="p-1">Category</th>
+    </tr>
+    <% @data.each do |manufacturer, discs| %>
+      <tr class="bg-columbia-blue text-black text-3xl"><th colspan='14' class="py-4 border border-white"><%= manufacturer.name %></th></tr>
+      <%= render Admin::Discs::RowComponent.with_collection(discs) %>
+    <% end %>
+  </table>
+</div>

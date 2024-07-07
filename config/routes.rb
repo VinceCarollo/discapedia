@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :discs, only: [:index, :edit, :destroy, :update]
+    resources :discs
   end
 
   get 'admin', to: 'admin/discs#index'
