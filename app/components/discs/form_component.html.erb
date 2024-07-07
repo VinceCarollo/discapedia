@@ -10,9 +10,9 @@
       <%= f.text_field :name, class: 'text-black rounded border p-1 border-poly-green' %>
       <%= f.label :slug %>
       <%= f.text_field :slug, class: 'text-black rounded border p-1 border-poly-green' %>
-      <%= f.label :manufacturer %>
-      <%= f.select :manufacturer,
-                   options_from_collection_for_select(Manufacturer.all, :id, :name, @disc.manufacturer_id),
+      <%= f.label :manufacturer_id %>
+      <%= f.select :manufacturer_id,
+                   options_from_collection_for_select(Manufacturer.order(:name), :id, :name, @disc.manufacturer_id),
                    { include_blank: true }, class: 'text-black rounded border p-2 border-poly-green' %>
       <%= f.label :speed %>
       <%= f.number_field :speed, step: :any, class: 'text-black rounded border p-1 border-poly-green w-1/2' %>
@@ -26,9 +26,9 @@
 
     <div class="flex flex-col gap-0.5">
       <%= f.label :category %>
-      <%= f.select :category, options_for_select(Disc.categories), { include_blank: false }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full' %>
+      <%= f.select :category, Disc.categories.keys, { include_blank: true }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full' %>
       <%= f.label :stability %>
-      <%= f.select :stability, options_for_select(Disc.stabilities), { include_blank: false }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full' %>
+      <%= f.select :stability, Disc.stabilities.keys, { include_blank: true }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full' %>
       <%= f.label :flight_chart_url %>
       <%= f.text_field :flight_chart_url, class: 'text-black rounded border p-1 border-poly-green mt-1 mb-12 ' %>
 

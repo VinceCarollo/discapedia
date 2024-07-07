@@ -16,6 +16,44 @@ RSpec.describe 'Admin::Discs', type: :request do
       end
     end
 
+    describe 'POST /admin/discs' do
+      let(:new_attributes) do
+        {
+          name: 'Teebird',
+          slug: 'teebird',
+          speed: 7,
+          glide: 4,
+          turn: -0,
+          fade: 2,
+          manufacturer_id: disc.manufacturer_id
+        }
+      end
+
+      before do
+        post admin_discs_url, params: { disc: new_attributes }
+      end
+
+      it 'creates a new disc' do
+        expect(Disc.find_by(slug: new_attributes[:slug])).to be_present
+      end
+
+      it 'redirects to the disc' do
+        expect(response).to redirect_to(admin_discs_url)
+      end
+
+      context 'with bad params' do
+        let(:new_attributes) { { name: '' } }
+
+        it 'returns unprocessable' do
+          expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        it 'renders new' do
+          expect(response).to render_template(:new)
+        end
+      end
+    end
+
     describe 'GET /admin/discs/:id/edit' do
       it 'renders a successful response' do
         get edit_admin_disc_url(disc)

@@ -1,5 +1,6 @@
 class Disc < ApplicationRecord
   include PgSearch::Model
+  include Capitalizable
 
   pg_search_scope :search_by_name,
                   associated_against: { manufacturer: :name },

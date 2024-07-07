@@ -6,6 +6,15 @@ module Admin
                   .group_by(&:manufacturer)
     end
 
+    def create
+      @disc = Disc.new(permitted)
+      if @disc.save
+        redirect_to admin_discs_path
+      else
+        render :new, status: :unprocessable_entity
+      end
+    end
+
     def new
       @disc = Disc.new
     end
@@ -33,7 +42,8 @@ module Admin
 
     def permitted
       params.require(:disc).permit(:name, :slug, :speed, :glide, :turn,
-                                   :fade, :flight_chart_url)
+                                   :fade, :flight_chart_url, :category, :stability,
+                                   :manufacturer_id)
     end
   end
 end
