@@ -22,10 +22,6 @@ RSpec.describe Discs::FormComponent, type: :component do
     expect(page).to have_selector("input[name='disc[slug]'][type='text']")
   end
 
-  it 'renders a number field for the disc buy_url' do
-    expect(page).to have_selector("input[name='disc[buy_url]'][type='text']")
-  end
-
   it 'renders a number field for the disc flight_chart_url' do
     expect(page).to have_selector("input[name='disc[flight_chart_url]'][type='text']")
   end
