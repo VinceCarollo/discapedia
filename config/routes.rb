@@ -9,15 +9,15 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#index'
 
-  get 'login', to: 'login#new'
-  post 'login', to: 'login#create'
-
   resources :manufacturers, only: [], param: :slug do
     resources :discs, only: [:show], param: :slug
   end
 
   namespace :admin do
     resources :discs
+
+    get 'login', to: 'login#new'
+    post 'login', to: 'login#create'
   end
 
   get 'admin', to: 'admin/discs#index'

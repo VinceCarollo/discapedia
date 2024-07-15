@@ -7,7 +7,7 @@ module Admin
     private
 
     def authenticate_admin!
-      redirect_to login_path unless current_user.present?
+      redirect_to admin_login_path unless current_user.present?
     end
 
     def current_user
