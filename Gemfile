@@ -79,4 +79,6 @@ end
 gem "image_processing", ">= 1.2"
 gem 'active_storage_db'
 gem 'erb_lint', require: false
+gem 'rack-attack'
+gem 'redis'
 
