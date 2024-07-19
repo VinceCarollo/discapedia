@@ -6,6 +6,12 @@ class DiscPreviewComponent < ViewComponent::Base
     @discs = discs
   end
 
+  private
+
+  def sort_direction
+    params[:sort_direction] == 'asc' ? 'desc' : 'asc'
+  end
+
   def disc_url(disc)
     manufacturer_disc_path(@manufacturer.slug, disc.slug)
   end
