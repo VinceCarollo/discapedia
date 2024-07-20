@@ -2,13 +2,13 @@
   <h1 class="text-2xl"><%= @manufacturer.name %></h1>
 
   <div class="flex justify-between gap-1 lg:gap-2 xl:gap-5 items-center text-sm sm:text-base">
-    <%= link_to 'Speed', search_path(q: params[:q], sort_by: 'speed', sort_direction:) %>
+    <%= link_to 'Speed', search_path(q: params[:q], sort_by: 'speed', sort_direction:), class: "#{'text-white' if params[:sort_by] == 'speed'}" %>
     <span class="text-cadet-gray">|</span>
-    <%= link_to 'Glide', search_path(q: params[:q], sort_by: 'glide', sort_direction:) %>
+    <%= link_to 'Glide', search_path(q: params[:q], sort_by: 'glide', sort_direction:), class: "#{'text-white' if params[:sort_by] == 'glide'}" %>
     <span class="text-cadet-gray">|</span>
-    <%= link_to 'Turn', search_path(q: params[:q], sort_by: 'turn', sort_direction:) %>
+    <%= link_to 'Turn', search_path(q: params[:q], sort_by: 'turn', sort_direction:), class: "#{'text-white' if params[:sort_by] == 'turn'}" %>
     <span class="text-cadet-gray">|</span>
-    <%= link_to 'Fade', search_path(q: params[:q], sort_by: 'fade', sort_direction:) %>
+    <%= link_to 'Fade', search_path(q: params[:q], sort_by: 'fade', sort_direction:), class: "#{'text-white' if params[:sort_by] == 'fade'}" %>
   </div>
 </div>
 <% @discs.each do |disc| %>
