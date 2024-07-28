@@ -86,6 +86,7 @@ class Rack::Attack
       CGI.unescape(req.query_string) =~ %r{/etc/passwd} ||
         req.path.include?('/etc/passwd') ||
         req.path.include?('wp-admin') ||
+        req.path.include?('wp-includes') ||
         req.path.include?('wp-login')
 
     end
