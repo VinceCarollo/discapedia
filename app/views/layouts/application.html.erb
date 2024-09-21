@@ -11,9 +11,13 @@
     <%= stylesheet_link_tag 'application', "data-turbo-track": 'reload' %>
     <%= favicon_link_tag 'fav.png' %>
     <%= javascript_importmap_tags %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
   </head>
 
-  <body class="bg-air-force-blue">
+  <body class="bg-air-force-blue font-varela">
     <%= render partial: 'shared/navbar' %>
 
     <main class="container px-3 md:px-12 mx-auto mt-28">

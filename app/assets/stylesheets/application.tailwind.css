@@ -10,11 +10,6 @@ div.field_with_errors > :is(input, textarea, select) {
     @apply border-red-300 text-red-900 placeholder-red-300;
 }
 
-@font-face {
-    font-family: "Fly";
-    src: local("Fly"), url("fly.otf") format("opentype")
-}
-
 @layer base {
     html {
         font-family: "Roboto Light", system-ui, sans-serif;

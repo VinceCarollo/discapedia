@@ -18,8 +18,7 @@ module.exports = {
         'columbia-blue': '#BFD7EA'
       },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        fly: ['"Fly"', "sans-serif"],
+        varela: ['"Varela Round"', ...defaultTheme.fontFamily.sans],
       },
     },
   },
