@@ -23,11 +23,9 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center">
-        <% if @disc.flight_chart_url.present? %>
-          <%= image_tag @disc.flight_chart_url, class: 'rounded-lg mx-auto' %>
-        <% end %>
-      </div>
+      <% if @disc.flight_chart_url.present? %>
+        <%= image_tag @disc.flight_chart_url, class: 'rounded-lg mx-auto' %>
+      <% end %>
     </div>
   </div>
 </turbo-frame>
