@@ -9,7 +9,7 @@ class DiscPreviewComponent < ViewComponent::Base
   private
 
   def sort_direction
-    params[:sort_direction] == 'asc' ? 'desc' : 'asc'
+    params[:sort_direction] == 'desc' ? 'asc' : 'desc'
   end
 
   def disc_url(disc)
