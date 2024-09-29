@@ -29,11 +29,11 @@
       <%= f.select :category, Disc.categories.keys, { include_blank: true }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full', required: true %>
       <%= f.label :stability %>
       <%= f.select :stability, Disc.stabilities.keys, { include_blank: true }, class: 'mt-1 text-black rounded border p-1 border-poly-green w-full', required: true %>
-      <%= f.label :flight_chart_url %>
-      <%= f.text_field :flight_chart_url, class: 'text-black rounded border p-1 border-poly-green mt-1 mb-12 ' %>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url, class: 'text-black rounded border p-1 border-poly-green mt-1 mb-12 ' %>
 
-      <% if @disc.flight_chart_url.present? %>
-        <%= image_tag(@disc.flight_chart_url, width: 300, class: 'mx-auto') %>
+      <% if @disc.image_url.present? %>
+        <%= image_tag(@disc.image_url, width: 300, class: 'mx-auto') %>
       <% else %>
         <div class="h-60 align-middle mb-5 border border-columbia-blue flex flex-column justify-center">
           <span class="block my-auto">No flight chart uploaded</span>

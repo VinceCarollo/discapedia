@@ -48,7 +48,7 @@ module Admin
 
     def permitted
       params.require(:disc).permit(:name, :slug, :speed, :glide, :turn,
-                                   :fade, :flight_chart_url, :category, :stability,
+                                   :fade, :image_url, :category, :stability,
                                    :manufacturer_id)
     end
   end
